@@ -5,6 +5,7 @@ export function StarIcon({ active }: { active: boolean }) {
       width="24"
       height="24"
       viewBox="0 0 24 24"
+      fill="none"
       className={`${
         active ? "fill-yellow-400" : "fill-transparent stroke-yellow-400"
       }`}
@@ -12,7 +13,7 @@ export function StarIcon({ active }: { active: boolean }) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+      <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
     </svg>
   );
 }
@@ -99,6 +100,45 @@ export function MeasurementsIcon() {
       <path d="m11.5 9.5 2-2" />
       <path d="m8.5 6.5 2-2" />
       <path d="m17.5 15.5 2-2" />
+    </svg>
+  );
+}
+
+export function BackspaceIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z" />
+      <path d="m12 9 6 6" />
+      <path d="m18 9-6 6" />
+    </svg>
+  );
+}
+
+export function DownIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m6 9 6 6 6-6" />
     </svg>
   );
 }

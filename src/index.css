@@ -21,21 +21,41 @@
 }
 
 #root {
-  @apply min-h-screen font-aptos bg-app-light dark:bg-app-dark-2 dark:text-app-light;
+  @apply min-h-screen font-aptos bg-app-light dark:bg-app-dark-2 dark:text-app-light text-app-dark-2;
+}
+
+button {
+  @apply flex items-center justify-center rounded-full transition-all active:scale-95;
 }
 
 input {
-  @apply rounded-full w-full h-12 text-xl outline-none dark:bg-app-light dark:text-app-dark-2;
+  @apply rounded-full w-full h-12 text-2xl outline-none bg-app-light/70 dark:bg-app-light/50 placeholder:text-app-dark-3/70 focus:bg-app-light dark:text-app-dark-2 transition-all;
+}
+
+.number_input {
+  @apply w-28 px-5 text-center bg-app-light/70;
+}
+
+h2 {
+  @apply text-2xl;
 }
 
 .list {
-  @apply h-14 px-4 flex items-center gap-4 text-xl dark:bg-app-dark-4 dark:even:bg-app-dark-4/90 mb-px;
+  @apply h-14 px-4 flex items-center gap-4 text-xl bg-neutral-50 dark:bg-app-dark-1 mb-px;
+}
+
+.list-modal {
+  @apply h-14 px-4 flex items-center gap-4 text-xl bg-app-light/30 even:bg-app-light/10 dark:bg-black/30 dark:even:bg-black/25 mb-px;
 }
 
 .btn {
-  @apply h-12 text-xl flex items-center justify-center bg-blue-500 text-white rounded-full px-5 transition-all active:scale-95 disabled:text-neutral-200;
+  @apply h-12 text-xl bg-app-accent-2 text-app-accent-1 px-5 disabled:bg-app-accent-2/50;
+}
+
+.btn-small {
+  @apply h-8 bg-app-accent-2 text-app-accent-1 px-4;
 }
 
 .btn-rounded {
-  @apply h-12 w-12 aspect-square flex items-center justify-center bg-neutral-100 text-neutral-600 dark:bg-app-accent-2 rounded-full  transition-all active:scale-95;
+  @apply h-12 w-12 aspect-square bg-app-light/70 dark:bg-white/15;
 }

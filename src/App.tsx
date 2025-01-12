@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ThemeToggle from "./components/ThemeToggle";
 import {
   BackspaceIcon,
@@ -22,6 +22,8 @@ import useCheckConnection from "./hooks/useCheckConnection";
 export default function App() {
   const date = new Date();
   const today = date.getDate();
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const isOnline = useCheckConnection();
 
@@ -214,6 +216,7 @@ export default function App() {
               <div className="relative w-full">
                 <input
                   type="text"
+                  ref={inputRef}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Поиск..."
@@ -224,6 +227,9 @@ export default function App() {
                   onClick={() => {
                     if (searchQuery.length > 0) {
                       setSearchQuery("");
+                      if (inputRef.current) {
+                        inputRef.current.focus();
+                      }
                     } else {
                       setIsItemsOpen(false);
                     }

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "bodik";
+  src: url("/fonts/regular.woff2") format("woff2");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "bodik";
+  src: url("/fonts/bold.woff2") format("woff2");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  @apply min-h-screen font-aptos bg-[#dbdbdb] dark:bg-[#181915] dark:text-[#dbdbdb];
+}

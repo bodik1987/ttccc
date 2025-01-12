@@ -4,6 +4,9 @@ import {
   BackspaceIcon,
   DeleteIcon,
   DownIcon,
+  MeasurementsIcon,
+  NetworkOffIcon,
+  NetworkOnIcon,
   PlusIcon,
   StarIcon,
 } from "./components/icons";
@@ -13,13 +16,17 @@ import { SEEDS } from "./lib/seeds";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "./components/modal";
 import ListItem from "./components/list-item";
+import Sync from "./components/sync/sync";
+import useCheckConnection from "./hooks/useCheckConnection";
 
 export default function App() {
   const date = new Date();
   const today = date.getDate();
 
+  const isOnline = useCheckConnection();
+
   const [items, setItems] = useLocalStorage<Item[]>("items", SEEDS);
-  const [userMeasurements] = useLocalStorage<{
+  const [userMeasurements, setUserMeasurements] = useLocalStorage<{
     weight: string;
     age: string;
   }>("userMeasurements", { weight: "80", age: "37" });
@@ -34,6 +41,8 @@ export default function App() {
   const [showFavorites, setShowFavorites] = useState(false);
   const [isItemsOpen, setIsItemsOpen] = useState(false);
   const [isItemWeightOpen, setIsItemWeightOpen] = useState(false);
+  const [isSyncOpen, setIsSyncOpen] = useState(false);
+  const [isUserMeasurementsOpen, setIsUserMeasurementsOpen] = useState(false);
   const [isAddItemOpen, setIsAddItemOpen] = useState(false);
   const [isEditItemOpen, setIsEditItemOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -156,6 +165,16 @@ export default function App() {
 
   const handleDeleteItem = (id: string) =>
     setItems((prev) => prev.filter((item) => item.id !== id));
+
+  const handleUserMeasurementsChange = (
+    field: keyof typeof userMeasurements,
+    value: string
+  ) => {
+    setUserMeasurements((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const toggleUserMeasurements = () =>
+    setIsUserMeasurementsOpen((prev) => !prev);
 
   return (
     <>
@@ -333,20 +352,78 @@ export default function App() {
         }
       />
 
+      <Modal
+        isOpen={isUserMeasurementsOpen}
+        onClose={toggleUserMeasurements}
+        content={
+          <div className="p-4">
+            <h2>Введите возраст и вес</h2>
+
+            <div className="mt-4 w-full flex gap-4">
+              <input
+                type="number"
+                value={userMeasurements.age}
+                onChange={(e) =>
+                  handleUserMeasurementsChange("age", e.target.value)
+                }
+                placeholder="Возраст (лет)"
+                className="number_input"
+              />
+              <input
+                type="number"
+                value={userMeasurements.weight}
+                onChange={(e) =>
+                  handleUserMeasurementsChange("weight", e.target.value)
+                }
+                placeholder="Вес (кг)"
+                className="number_input !w-full"
+                autoFocus
+              />
+
+              <button
+                onClick={toggleUserMeasurements}
+                disabled={!userMeasurements.weight || !userMeasurements.age}
+                className="btn "
+              >
+                Сохранить
+              </button>
+            </div>
+          </div>
+        }
+      />
+
+      <Modal
+        isOpen={isSyncOpen}
+        onClose={() => setIsSyncOpen(false)}
+        content={<Sync />}
+      />
+
       <main className="max-w-md mx-auto">
-        <div className="flex gap-3 p-4">
-          <div className="flex items-center gap-4">
-            <button onClick={cleanDay} className="btn-small">
+        <div className="flex flex-col gap-3 p-4">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setIsUserMeasurementsOpen(true)}
+              className="btn-rounded"
+            >
+              <MeasurementsIcon />
+            </button>
+            <button onClick={() => setIsSyncOpen(true)} className="btn-rounded">
+              {isOnline ? <NetworkOnIcon /> : <NetworkOffIcon />}
+            </button>
+            <button className="btn-rounded">
+              <ThemeToggle />
+            </button>
+
+            <button onClick={cleanDay} className="btn ml-auto">
               Очистить
             </button>
-            <ThemeToggle />
           </div>
 
-          <div className="ml-auto flex flex-col">
-            <p className="text-neutral-500 leading-4 text-right">
+          <div className="flex justify-between items-center">
+            <p className="text-neutral-500">
               {`${totalCalories.toFixed(0)} / ${target.toFixed(0)}`} ккал
             </p>
-            <p className="text-neutral-500 text-right">
+            <p className="text-neutral-500">
               {remainingCalories > 0 ? "Осталось " : "Превышено "}
               <span
                 className={`font-bold text-lg ${

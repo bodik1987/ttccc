@@ -2,26 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "bodik";
-  src: url("/fonts/regular.woff2") format("woff2");
-  font-weight: 400; /* Regular */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "bodik";
-  src: url("/fonts/bold.woff2") format("woff2");
-  font-weight: 700; /* Bold */
-  font-style: normal;
-}
-
 * {
   -webkit-tap-highlight-color: transparent;
 }
 
 #root {
-  @apply min-h-screen font-aptos bg-app-light dark:bg-app-dark-2 dark:text-app-light text-app-dark-2;
+  @apply min-h-screen bg-app-light dark:bg-app-dark-2 dark:text-app-light text-app-dark-2;
 }
 
 button {
@@ -37,23 +23,23 @@ input {
 }
 
 h2 {
-  @apply text-2xl;
+  @apply text-2xl font-medium;
 }
 
 .list {
-  @apply h-14 px-4 flex items-center gap-4 text-xl bg-neutral-50 dark:bg-app-dark-1 mb-px;
+  @apply h-14 px-4 flex items-center gap-4 text-xl bg-neutral-50 dark:bg-app-dark-1 mb-px min-[400px]:rounded-lg font-medium;
 }
 
 .list-modal {
-  @apply h-14 px-4 flex items-center gap-4 text-xl bg-app-light/30 even:bg-app-light/10 dark:bg-black/30 dark:even:bg-black/25 mb-px;
+  @apply h-14 px-4 flex items-center gap-4 text-xl bg-app-light/30 even:bg-app-light/10 dark:bg-black/30 dark:even:bg-black/25 mb-px min-[400px]:rounded-lg font-medium;
 }
 
 .btn {
-  @apply h-12 text-xl bg-app-accent-2 text-app-accent-1 px-5 disabled:bg-app-accent-2/50;
+  @apply h-12 text-lg font-medium bg-app-accent-2 text-app-accent-1 px-5 disabled:bg-app-accent-2/50;
 }
 
 .btn-small {
-  @apply h-8 bg-app-accent-2 text-app-accent-1 px-4;
+  @apply h-8 bg-app-accent-2 text-app-accent-1 px-4 font-medium;
 }
 
 .btn-rounded {

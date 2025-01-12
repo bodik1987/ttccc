@@ -403,18 +403,23 @@ export default function App() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsUserMeasurementsOpen(true)}
-              className="btn-rounded"
+              className="btn-rounded !bg-neutral-50 dark:!bg-white/15"
             >
               <MeasurementsIcon />
             </button>
-            <button onClick={() => setIsSyncOpen(true)} className="btn-rounded">
+            <button
+              onClick={() => setIsSyncOpen(true)}
+              className="btn-rounded !bg-neutral-50 dark:!bg-white/15"
+            >
               {isOnline ? <NetworkOnIcon /> : <NetworkOffIcon />}
             </button>
-            <button className="btn-rounded">
-              <ThemeToggle />
-            </button>
 
-            <button onClick={cleanDay} className="btn ml-auto">
+            <ThemeToggle />
+
+            <button
+              onClick={cleanDay}
+              className="btn ml-auto !bg-neutral-50 !text-app-dark-1 dark:!text-app-accent-1 dark:!bg-app-accent-2"
+            >
               Очистить
             </button>
           </div>
@@ -469,7 +474,7 @@ export default function App() {
           <PlusIcon />
         </button>
 
-        <footer className="fixed bottom-0 inset-x-0 h-16 bg-neutral-50 dark:bg-app-dark-1">
+        <footer className="fixed bottom-0 inset-x-0 h-16 bg-neutral-50 dark:bg-app-dark-1 font-medium">
           <div className="h-full max-w-md mx-auto flex items-center justify-around text-xl">
             <button onClick={() => setSelectedDay(1)} className="w-full h-full">
               <span

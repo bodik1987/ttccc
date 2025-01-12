@@ -4,9 +4,6 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        aptos: ["bodik", "sans-serif"],
-      },
       colors: {
         "app-dark-1": "#1D1F21",
         "app-dark-2": "#131313",

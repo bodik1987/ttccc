@@ -8,10 +8,10 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "My PWA App",
-        short_name: "PWA",
-        description: "My awesome PWA app",
-        theme_color: "#ffffff",
+        name: "TTCC",
+        short_name: "TTCC",
+        description: "TTCC",
+        theme_color: "#131313",
         icons: [
           {
             src: "icon-192x192.png",

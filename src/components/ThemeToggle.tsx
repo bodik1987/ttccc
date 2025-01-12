@@ -5,7 +5,10 @@ export default function ThemeToggle() {
   const handleClick = () => toggleTheme();
 
   return (
-    <button onClick={() => handleClick()}>
+    <button
+      onClick={() => handleClick()}
+      className="btn-rounded !bg-neutral-50 dark:!bg-white/15"
+    >
       <ThemeIcon active={theme === "dark"} />
     </button>
   );

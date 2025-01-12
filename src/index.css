@@ -21,5 +21,21 @@
 }
 
 #root {
-  @apply min-h-screen font-aptos bg-[#dbdbdb] dark:bg-[#181915] dark:text-[#dbdbdb];
+  @apply min-h-screen font-aptos bg-app-light dark:bg-app-dark-2 dark:text-app-light;
+}
+
+input {
+  @apply rounded-full w-full h-12 text-xl outline-none dark:bg-app-light dark:text-app-dark-2;
+}
+
+.list {
+  @apply h-14 px-4 flex items-center gap-4 text-xl dark:bg-app-dark-4 dark:even:bg-app-dark-4/90 mb-px;
+}
+
+.btn {
+  @apply h-12 text-xl flex items-center justify-center bg-blue-500 text-white rounded-full px-5 transition-all active:scale-95 disabled:text-neutral-200;
+}
+
+.btn-rounded {
+  @apply h-12 w-12 aspect-square flex items-center justify-center bg-neutral-100 text-neutral-600 dark:bg-app-accent-2 rounded-full  transition-all active:scale-95;
 }

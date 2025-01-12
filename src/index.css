@@ -15,7 +15,7 @@ button {
 }
 
 input {
-  @apply rounded-full w-full h-12 text-2xl font-medium outline-none bg-app-light/70 dark:bg-app-light/50 placeholder:text-app-dark-3/70 focus:bg-app-light dark:text-app-dark-2 transition-all;
+  @apply rounded-full w-full h-12 text-xl font-medium outline-none bg-app-light/70 dark:bg-app-light/50 placeholder:text-app-dark-3/70 focus:bg-app-light dark:text-app-dark-2 transition-all;
 }
 
 .number_input {

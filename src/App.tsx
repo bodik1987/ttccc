@@ -216,7 +216,7 @@ export default function App() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Поиск по названию"
+                  placeholder="Поиск..."
                   className="pl-5 pr-12"
                 />
 

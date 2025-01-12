@@ -12,6 +12,7 @@ export default defineConfig({
         short_name: "TTCC",
         description: "TTCC",
         theme_color: "#131313",
+        orientation: "portrait",
         icons: [
           {
             src: "icon-192x192.png",

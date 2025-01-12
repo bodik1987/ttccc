@@ -28,12 +28,13 @@ export default function App() {
   const isOnline = useCheckConnection();
 
   const [items, setItems] = useLocalStorage<Item[]>("items", SEEDS);
+  const [lastPage, setLastPage] = useLocalStorage("lastPage", 1);
   const [userMeasurements, setUserMeasurements] = useLocalStorage<{
     weight: string;
     age: string;
   }>("userMeasurements", { weight: "80", age: "37" });
 
-  const [selectedDay, setSelectedDay] = useState(1);
+  const [selectedDay, setSelectedDay] = useState(lastPage);
 
   const [day, setDay] = useLocalStorage<IDay>("day", {
     productsToEat: [],
@@ -482,7 +483,13 @@ export default function App() {
 
         <footer className="fixed bottom-0 inset-x-0 h-16 bg-neutral-50 dark:bg-app-dark-1 font-medium">
           <div className="h-full max-w-md mx-auto flex items-center justify-around text-xl">
-            <button onClick={() => setSelectedDay(1)} className="w-full h-full">
+            <button
+              onClick={() => {
+                setSelectedDay(1);
+                setLastPage(1);
+              }}
+              className="w-full h-full"
+            >
               <span
                 className={`${
                   selectedDay === 1
@@ -493,7 +500,13 @@ export default function App() {
                 {today % 2 !== 0 ? "Сегодня" : "Завтра"}
               </span>
             </button>
-            <button onClick={() => setSelectedDay(2)} className="w-full h-full">
+            <button
+              onClick={() => {
+                setSelectedDay(2);
+                setLastPage(2);
+              }}
+              className="w-full h-full"
+            >
               <span
                 className={`${
                   selectedDay === 2

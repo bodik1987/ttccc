@@ -408,8 +408,8 @@ export default function App() {
         content={<Sync />}
       />
 
-      <main className="max-w-md mx-auto">
-        <div className="flex flex-col gap-3 p-4">
+      <main className="max-w-md mx-auto pt-[120px] pb-[64px]">
+        <div className="fixed top-0 inset-x-0 flex flex-col gap-3 p-4 z-10 bg-app-light dark:bg-app-dark-2">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsUserMeasurementsOpen(true)}
@@ -484,7 +484,7 @@ export default function App() {
           <PlusIcon />
         </button>
 
-        <footer className="fixed bottom-0 inset-x-0 h-16 bg-neutral-50 dark:bg-app-dark-1 font-medium">
+        <footer className="fixed bottom-0 inset-x-0 h-16 bg-neutral-100 dark:bg-app-dark-1 dark:border-t dark:border-app-dark-2 font-medium">
           <div className="h-full max-w-md mx-auto flex items-center justify-around text-xl">
             <button
               onClick={() => {

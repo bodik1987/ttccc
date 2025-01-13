@@ -52,7 +52,12 @@ export default function ListItem({
 
   return (
     <div className="p-4">
-      <h2>{item ? "Изменить" : "Добавить продукт"}</h2>
+      <div className="flex justify-between items-start">
+        <h2>{item ? "Изменить" : "Добавить продукт"}</h2>
+        <button type="button" onClick={toggleFavorite} className="btn-rounded">
+          <StarIcon active={isFavorite} />
+        </button>
+      </div>
 
       <form className="mt-4" onSubmit={handleSubmit}>
         <div className="mt-2 flex gap-1">
@@ -82,14 +87,6 @@ export default function ListItem({
               <DeleteIcon />
             </button>
           )}
-
-          <button
-            type="button"
-            onClick={toggleFavorite}
-            className="btn-rounded"
-          >
-            <StarIcon active={isFavorite} />
-          </button>
 
           <button
             type="submit"

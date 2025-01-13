@@ -45,3 +45,7 @@ h2 {
 .btn-rounded {
   @apply h-12 w-12 aspect-square bg-app-light/70 dark:bg-white/15;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

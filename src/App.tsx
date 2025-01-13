@@ -249,12 +249,6 @@ export default function App() {
               <button onClick={addNewProduct} className="btn-rounded">
                 <PlusIcon />
               </button>
-              <button
-                onClick={() => setShowFavorites((prev) => !prev)}
-                className="btn-rounded"
-              >
-                <StarIcon active={showFavorites} />
-              </button>
             </div>
           </div>
         }

@@ -406,17 +406,8 @@ export default function App() {
         content={<Sync />}
       />
 
-      <main className="max-w-md mx-auto pt-[120px] pb-[64px] relative">
-        <div
-          className="fixed top-0 inset-x-0 p-4 z-10
-          bg-transparent
-          [background-image:radial-gradient(transparent_1px,white_1px)]
-          dark:[background-image:radial-gradient(transparent_1px,rgb(26,26,26)_1px)]
-          [background-size:4px_4px]
-          [backdrop-filter:blur(3px)]
-          [mask:linear-gradient(rgb(0,0,0)_70%,rgba(0,0,0,0)_100%)]
-          opacity-100"
-        >
+      <main className="max-w-md mx-auto pt-[120px] pb-[64px]">
+        <div className="fixed top-0 inset-x-0 flex flex-col gap-3 p-4 z-10 bg-app-light dark:bg-app-dark-2">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsUserMeasurementsOpen(true)}

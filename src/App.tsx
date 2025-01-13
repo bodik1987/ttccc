@@ -193,7 +193,17 @@ export default function App() {
                   item.title.toLowerCase().includes(searchQuery.toLowerCase())
                 )
                 .filter((item) => (showFavorites ? item.isFavorite : true))
-                .sort((a, b) => a.title.localeCompare(b.title))
+                .sort((a, b) => {
+                  // Сначала сортируем по isFavorite
+                  if (a.isFavorite && !b.isFavorite) {
+                    return -1;
+                  }
+                  if (!a.isFavorite && b.isFavorite) {
+                    return 1;
+                  }
+                  // Если isFavorite одинаковый, сортируем по title
+                  return a.title.localeCompare(b.title);
+                })
                 .map((item) => (
                   <div
                     onClick={() => toggleItemWeight(item)}
@@ -201,17 +211,13 @@ export default function App() {
                     className="list-modal"
                   >
                     <span className="w-full flex items-center gap-3">
-                      {item.title}
                       {item.isFavorite && <StarIcon active />}
+                      {item.title}
                     </span>
                     <span>{item.calories}</span>
                   </div>
                 ))}
             </div>
-
-            <button onClick={addNewProduct} className="btn-small ml-2 mt-4">
-              Новый продукт
-            </button>
 
             <div className="mt-1 p-2 flex gap-3">
               <div className="relative w-full">
@@ -240,6 +246,9 @@ export default function App() {
                   {searchQuery.length > 0 ? <BackspaceIcon /> : <DownIcon />}
                 </button>
               </div>
+              <button onClick={addNewProduct} className="btn-rounded">
+                <PlusIcon />
+              </button>
               <button
                 onClick={() => setShowFavorites((prev) => !prev)}
                 className="btn-rounded"

@@ -11,7 +11,7 @@
 }
 
 button {
-  @apply flex items-center justify-center rounded-full transition-all active:scale-95;
+  @apply flex items-center justify-center rounded-full whitespace-nowrap transition-all active:scale-95;
 }
 
 input {

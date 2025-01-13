@@ -93,7 +93,7 @@ export default function ListItem({
             disabled={!title || !calories}
             className="btn w-full"
           >
-            {item ? "Изменить" : "Добавить"}
+            Сохранить
           </button>
         </div>
       </form>

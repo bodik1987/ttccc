@@ -3,6 +3,7 @@ import ThemeToggle from "./components/ThemeToggle";
 import {
   BackspaceIcon,
   DeleteIcon,
+  DostIcon,
   DownIcon,
   MeasurementsIcon,
   NetworkOffIcon,
@@ -265,11 +266,8 @@ export default function App() {
           <form onSubmit={handleSubmit} className="p-4">
             <div className="flex items-start justify-between gap-3">
               <h2>{selectedItem?.title}</h2>
-              <button
-                onClick={editProduct}
-                className="btn-small dark:!bg-app-light/30 !bg-app-light !text-app-accent-2 dark:!text-app-light/70"
-              >
-                Изменить
+              <button onClick={editProduct} className="h-8 w-8">
+                <DostIcon />
               </button>
             </div>
 

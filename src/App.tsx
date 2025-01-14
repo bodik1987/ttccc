@@ -223,7 +223,9 @@ export default function App() {
             <div className="mt-1 p-2 flex gap-3">
               <div className="relative w-full">
                 <input
-                  type="text"
+                  type="search"
+                  autoComplete="false"
+                  spellCheck="false"
                   ref={inputRef}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}

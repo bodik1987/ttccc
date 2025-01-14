@@ -7,7 +7,6 @@ import { SEEDS } from "./lib/seeds";
 import ThemeToggle from "./components/ThemeToggle";
 import ListItem from "./components/list-item";
 import Sync from "./components/sync/sync";
-import VaulModal from "./components/vaul-modal";
 import {
   BackspaceIcon,
   DeleteIcon,
@@ -19,6 +18,7 @@ import {
   PlusIcon,
   StarIcon,
 } from "./components/icons";
+import Modal from "./components/modal";
 
 export default function App() {
   const date = new Date();
@@ -183,7 +183,7 @@ export default function App() {
   return (
     <>
       {/* Выбор продукта */}
-      <VaulModal
+      <Modal
         isOpen={isItemsOpen}
         onClose={() => setIsItemsOpen(false)}
         content={
@@ -256,7 +256,7 @@ export default function App() {
       />
 
       {/* Выбор веса */}
-      <VaulModal
+      <Modal
         isOpen={isItemWeightOpen}
         onClose={() => {
           setIsItemWeightOpen(false);
@@ -295,7 +295,7 @@ export default function App() {
       />
 
       {/* Правка */}
-      <VaulModal
+      <Modal
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
         content={
@@ -333,7 +333,7 @@ export default function App() {
         }
       />
 
-      <VaulModal
+      <Modal
         isOpen={isAddItemOpen}
         onClose={() => setIsAddItemOpen(false)}
         content={
@@ -347,7 +347,7 @@ export default function App() {
         }
       />
 
-      <VaulModal
+      <Modal
         isOpen={isEditItemOpen}
         onClose={() => setIsEditItemOpen(false)}
         content={
@@ -360,7 +360,7 @@ export default function App() {
         }
       />
 
-      <VaulModal
+      <Modal
         isOpen={isUserMeasurementsOpen}
         onClose={toggleUserMeasurements}
         content={
@@ -400,7 +400,7 @@ export default function App() {
         }
       />
 
-      <VaulModal
+      <Modal
         isOpen={isSyncOpen}
         onClose={() => setIsSyncOpen(false)}
         content={<Sync />}

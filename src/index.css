@@ -31,7 +31,7 @@ h2 {
 }
 
 .list-modal {
-  @apply h-14 px-4 flex items-center gap-4 text-xl bg-app-light/30 even:bg-app-light/10 dark:bg-black/30 dark:even:bg-black/25 mb-px font-medium;
+  @apply h-14 px-4 flex items-center gap-4 text-xl dark:text-app-light bg-app-light/30 dark:bg-[#424242] mb-px font-medium;
 }
 
 .btn {

@@ -1,5 +1,13 @@
 import { useRef, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import useLocalStorage from "./hooks/useLocalStorage";
+import useCheckConnection from "./hooks/useCheckConnection";
+import { IDay, Item } from "./lib/types";
+import { SEEDS } from "./lib/seeds";
 import ThemeToggle from "./components/ThemeToggle";
+import ListItem from "./components/list-item";
+import Sync from "./components/sync/sync";
+import VaulModal from "./components/vaul-modal";
 import {
   BackspaceIcon,
   DeleteIcon,
@@ -11,14 +19,6 @@ import {
   PlusIcon,
   StarIcon,
 } from "./components/icons";
-import useLocalStorage from "./hooks/useLocalStorage";
-import { IDay, Item } from "./lib/types";
-import { SEEDS } from "./lib/seeds";
-import { v4 as uuidv4 } from "uuid";
-import Modal from "./components/modal";
-import ListItem from "./components/list-item";
-import Sync from "./components/sync/sync";
-import useCheckConnection from "./hooks/useCheckConnection";
 
 export default function App() {
   const date = new Date();
@@ -183,11 +183,11 @@ export default function App() {
   return (
     <>
       {/* Выбор продукта */}
-      <Modal
+      <VaulModal
         isOpen={isItemsOpen}
         onClose={() => setIsItemsOpen(false)}
         content={
-          <div className="p-2">
+          <div className="mt-2 p-2">
             <div className="rounded-xl max-h-[399px] overflow-y-auto">
               {items
                 .filter((item) =>
@@ -256,7 +256,7 @@ export default function App() {
       />
 
       {/* Выбор веса */}
-      <Modal
+      <VaulModal
         isOpen={isItemWeightOpen}
         onClose={() => {
           setIsItemWeightOpen(false);
@@ -295,7 +295,7 @@ export default function App() {
       />
 
       {/* Правка */}
-      <Modal
+      <VaulModal
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
         content={
@@ -333,7 +333,7 @@ export default function App() {
         }
       />
 
-      <Modal
+      <VaulModal
         isOpen={isAddItemOpen}
         onClose={() => setIsAddItemOpen(false)}
         content={
@@ -347,7 +347,7 @@ export default function App() {
         }
       />
 
-      <Modal
+      <VaulModal
         isOpen={isEditItemOpen}
         onClose={() => setIsEditItemOpen(false)}
         content={
@@ -360,7 +360,7 @@ export default function App() {
         }
       />
 
-      <Modal
+      <VaulModal
         isOpen={isUserMeasurementsOpen}
         onClose={toggleUserMeasurements}
         content={
@@ -400,7 +400,7 @@ export default function App() {
         }
       />
 
-      <Modal
+      <VaulModal
         isOpen={isSyncOpen}
         onClose={() => setIsSyncOpen(false)}
         content={<Sync />}

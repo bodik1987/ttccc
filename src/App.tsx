@@ -242,7 +242,7 @@ export default function App() {
                       setIsItemsOpen(false);
                     }
                   }}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-red-400 dark:text-app-dark-3 w-11 h-11 rounded-full flex items-center justify-center"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-red-400 dark:text-app-dark-2 w-11 h-11 rounded-full flex items-center justify-center"
                 >
                   {searchQuery.length > 0 ? <BackspaceIcon /> : <DownIcon />}
                 </button>

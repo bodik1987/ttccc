@@ -187,7 +187,7 @@ export default function App() {
         isOpen={isItemsOpen}
         onClose={() => setIsItemsOpen(false)}
         content={
-          <div className="mt-2 p-2">
+          <div className="p-2">
             <div className="rounded-xl max-h-[399px] overflow-y-auto">
               {items
                 .filter((item) =>

@@ -36,11 +36,11 @@ button {
 }
 
 input {
-  @apply rounded-full w-full h-12 text-xl font-medium outline-none bg-app-light/70 dark:bg-app-light/50 placeholder:text-app-dark-1/70 focus:bg-app-light dark:text-app-dark-2 transition-all;
+  @apply rounded-full w-full h-12 text-xl font-medium outline-none bg-[#EDEDEF] dark:bg-app-light/50 placeholder:text-app-dark-1/70 focus:bg-app-light dark:text-app-dark-2 transition-all;
 }
 
 .number_input {
-  @apply w-28 px-5 text-center bg-app-light/70;
+  @apply w-28 px-5 text-center bg-[#EDEDEF];
 }
 
 h2 {
@@ -52,7 +52,7 @@ h2 {
 }
 
 .list-modal {
-  @apply h-14 px-4 flex items-center gap-4 text-xl bg-app-light/30 even:bg-app-light/10 dark:bg-app-dark-4 mb-px font-medium;
+  @apply h-14 px-4 flex items-center gap-4 text-xl bg-[#EDEDEF] dark:bg-app-dark-4 mb-px font-medium;
 }
 
 .btn {
@@ -64,7 +64,7 @@ h2 {
 }
 
 .btn-rounded {
-  @apply h-12 w-12 aspect-square bg-app-light/70 dark:bg-white/15;
+  @apply h-12 w-12 aspect-square bg-[#EDEDEF] dark:bg-white/15;
 }
 
 ::-webkit-scrollbar {

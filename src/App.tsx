@@ -188,7 +188,7 @@ export default function App() {
         onClose={() => setIsItemsOpen(false)}
         content={
           <div className="mt-2 p-2">
-            <div className="rounded-xl max-h-[399px] h-auto overflow-y-auto">
+            <div className="rounded-xl max-h-[399px] overflow-y-auto">
               {items
                 .filter((item) =>
                   item.title.toLowerCase().includes(searchQuery.toLowerCase())

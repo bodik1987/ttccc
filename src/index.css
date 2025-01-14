@@ -48,11 +48,11 @@ h2 {
 }
 
 .list {
-  @apply h-14 px-4 flex items-center gap-4 text-xl bg-neutral-50 dark:bg-app-dark-1 mb-px font-medium;
+  @apply h-14 px-4 flex items-center gap-4 text-lg bg-neutral-50 dark:bg-app-dark-1 mb-px font-medium;
 }
 
 .list-modal {
-  @apply h-14 px-4 flex items-center gap-4 text-xl bg-[#EDEDEF] dark:bg-app-dark-4 mb-px font-medium;
+  @apply h-14 px-4 flex items-center gap-4 text-lg bg-[#EDEDEF] dark:bg-app-dark-4 mb-px font-medium;
 }
 
 .btn {

@@ -432,7 +432,7 @@ export default function App() {
             </button>
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center select-none">
             <p className="text-neutral-500">
               {`${totalCalories.toFixed(0)} / ${target.toFixed(0)}`} ккал
             </p>

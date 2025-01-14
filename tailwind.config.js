@@ -7,8 +7,8 @@ export default {
       colors: {
         "app-dark-1": "#1D1F21",
         "app-dark-2": "#131313",
-        "app-dark-3": "#281E28",
-        "app-dark-4": "#151119",
+        "app-dark-3": "#242424",
+        "app-dark-4": "#424242",
         "app-light": "#E6E6E8",
         "app-accent-1": "#BDE8FE",
         "app-accent-2": "#114971",

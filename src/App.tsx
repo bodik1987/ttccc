@@ -267,7 +267,7 @@ export default function App() {
         content={
           <form onSubmit={handleSubmit} className="p-4">
             <div className="flex items-start justify-between gap-3">
-              <h2>{selectedItem?.title, selectedItem?.calories}</h2>
+              <h2>{selectedItem?.title}, {selectedItem?.calories}</h2>
               <button onClick={editProduct} className="h-8 w-8">
                 <DostIcon />
               </button>
